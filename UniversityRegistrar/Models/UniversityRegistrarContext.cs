@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace UniversityRegistrar.Models
 {
-  public class UniversityRegistrar : DbContext
+  public class UniversityRegistrarContext : DbContext
   {
     public DbSet<Student> Students { get; set; }
     
