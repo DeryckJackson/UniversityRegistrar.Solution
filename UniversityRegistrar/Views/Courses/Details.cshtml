@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+@using UniversityRegistrar.Models;
+@model UniversityRegistrar.Models.Course;
+
+<h2 class="jumbotron">Course Details</h2>
+<hr/>
+<h4>Course Name: @Html.DisplayFor(model => model.CourseName)</h4>
+<hr/>
+<h4>Description: @Html.DisplayFor(model => model.Description)</h4>
+<hr/>
+<h4>Teacher : @Html.DisplayFor(model => model.Teacher)</h4>
+<hr/>
+<h4>Term Offered : @Html.DisplayFor(model => model.TermOffered)</h4>
+<hr/>
+
+<input type="button" class="btn btn-default" value="Back to course list" onclick="location.href='@Url.Action("Index", "Courses")'" />

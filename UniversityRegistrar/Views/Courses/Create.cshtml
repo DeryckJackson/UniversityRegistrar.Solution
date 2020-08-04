@@ -1,0 +1,30 @@
+@{
+  Layout ="_Layout";
+}
+
+@model UniversityRegistrar.Models.Course
+
+<h2 class="jumbotron">Add a new Course</h4>
+
+@using (Html.BeginForm())
+{
+  <div class="form-group">
+    <label>Course Name</label>
+    @Html.TextBoxFor(model => model.CourseName, new { @class = "form-control"})
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    @Html.TextBoxFor(model => model.Description, new { @class = "form-control"})
+  </div>
+  <div class="form-group">
+    <label>Teacher</label><br>
+    @Html.TextBoxFor(model => model.Teacher, new { @class = "form-control"})<br>
+  </div>
+  <div class="form-group">
+    <label>Term Offered</label><br>
+    @Html.TextBoxFor(model => model.TermOffered, new { @class = "form-control"})<br>
+  </div>
+  <input type="submit" class="btn btn-default" value="Add" />
+}
+
+<input type="button" class="btn btn-default" value="Back to course list" onclick="location.href='@Url.Action("Index", "Courses")'" />

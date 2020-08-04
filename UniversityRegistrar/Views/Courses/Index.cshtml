@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+
+@using UniversityRegistrar.Models; 
+@model List<UniversityRegistrar.Models.Course>;
+
+<h1 class="jumbotron text-center">University Course Offerings</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3> No Courses Have Been Added yet </h3>
+}
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Course Name</th>
+      <th>Course Description</th>
+      <th>Teacher</th>
+      <th>Term Offered</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach(Course course in Model) 
+    {
+      <tr>
+      <td>@course.CourseName </td>
+      <td>@course.Description</td>
+      <td>@course.Teacher</td>
+      <td>@course.TermOffered</td>
+      <td>@Html.ActionLink("Edit", "Edit", new { id = course.CourseId })  |  @Html.ActionLink("Details", "Details", new { id = course.CourseId}) | @Html.ActionLink("Delete", "Delete", new { id = course.CourseId})</td>
+      </tr>
+    }
+  </tbody>
+</table> 
+
+<button class="btn btn-default">@Html.ActionLink("Add New Course", "Create")</button>
+<button class="btn btn-default">@Html.ActionLink("Home", "Index", "Home")</button>
+
