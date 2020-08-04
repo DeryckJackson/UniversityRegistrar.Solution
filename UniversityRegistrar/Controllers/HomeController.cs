@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace HairSalon.Controllers
+namespace UniversityRegistrar.Controllers
 {
   public class HomeController : Controller
   {

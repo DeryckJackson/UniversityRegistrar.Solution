@@ -1,12 +1,9 @@
 using System.Collections.Generic;
 
-namespace HairSalon.Models
+namespace UniversityRegistrar.Models
 {
-  public class Client
+  public class Students
   {
-    public int ClientId { get; set; }
-    public string Name { get; set; }
-    public int StylistId { get; set; }
-    public virtual Stylist Stylist { get; set; }
+    
   }
 }
