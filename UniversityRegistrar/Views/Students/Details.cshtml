@@ -13,4 +13,24 @@
 <h4>Date Enrolled: @Html.DisplayFor(model => model.DateEnrolled)</h4>
 <hr/>
 
+@if(@Model.Courses.Count == 0)
+{
+  <p>This student doesn't have any courses yet.</p>
+}
+else
+{
+  <h4>Courses student is enrolled in:</h4>
+  <ul>
+  @foreach(var join in Model.Courses)
+  {
+    <li>@join.Course.CourseName</li>
+    @using (Html.BeginForm("DeleteCourse", "Students"))
+    {
+    @Html.Hidden("joinId", @join.CourseStudentId)
+    <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
 <input type="button" class="btn btn-default" value="Back to student list" onclick="location.href='@Url.Action("Index", "Students")'" />

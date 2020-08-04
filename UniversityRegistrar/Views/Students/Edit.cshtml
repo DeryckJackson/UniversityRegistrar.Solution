@@ -22,6 +22,10 @@ Layout = "_Layout";
     <label>Date Enrolled</label><br>
     @Html.EditorFor(model => model.DateEnrolled, new { @class = "form-control"})<br>
   </div>
+  <div class="form-group">
+    @Html.Label("Select course")
+    @Html.DropDownList("CourseId")
+  </div>
   <input type="submit" class="btn btn-default" value="Save" />
 }
 
