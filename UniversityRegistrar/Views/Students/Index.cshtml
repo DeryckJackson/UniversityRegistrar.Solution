@@ -11,7 +11,7 @@
   {
     <h3> No students have been added yet!</h3>
   }
-  
+
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
@@ -28,11 +28,11 @@
       <td>@student.FirstName </td>
       <td>@student.LastName</td>
       <td>@student.DateEnrolled</td>
-      <td>@Html.ActionLink("Edit", "Edit", new { id = student.StudentId })  |  @Html.ActionLink("Details", "Details", new { id = student.StudentId})</td>
+      <td>@Html.ActionLink("Edit", "Edit", new { id = student.StudentId })  |  @Html.ActionLink("Details", "Details", new { id = student.StudentId}) | @Html.ActionLink("Delete", "Delete", new { id = student.StudentId})</td>
       </tr>
     }
   </tbody>
 </table> 
 
-<button class="btn btn-default">@Html.ActionLink("Add a new student", "Create")</button>
-<button class="btn btn-default">@Html.ActionLink("Home", "Index", "Home")</button>
+<input type="button" class="btn btn-default" value="Add a new student" onclick="location.href='@Url.Action("Create", "Students")'" />
+<input type="button" class="btn btn-default" value="Home" onclick="location.href='@Url.Action("Index", "Home")'" />

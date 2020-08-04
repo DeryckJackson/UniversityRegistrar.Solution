@@ -1,0 +1,26 @@
+@{
+Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h2 class="jumbotron">Edit @Html.DisplayFor(model => model.FirstName)</h4>
+
+@using (Html.BeginForm())
+{
+  <div class="form-group">
+    <label>First Name</label>
+    @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control"})
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    @Html.TextBoxFor(model => model.LastName, new { @class = "form-control"})
+  </div>
+  <div class="form-group">
+    <label>Date Enrolled</label><br>
+    @Html.EditorFor(model => model.DateEnrolled, new { @class = "form-control"})<br>
+  </div>
+  <input type="submit" class="btn btn-default" value="Add" />
+}
+
+<input type="button" class="btn btn-default" value="Back to student list" onclick="location.href='@Url.Action("Index", "Students")'" />

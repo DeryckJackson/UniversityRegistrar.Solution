@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h2 class="jumbotron">Delete Student</h2>
+
+<p>Are you sure you want to delete this student?</p>
+
+
+<p>First Name: @Html.DisplayFor(model => model.FirstName) | Last Name: @Html.DisplayFor(model => model.LastName)</p>
+@using (Html.BeginForm())
+{
+  <input type="submit" class="btn btn-danger" value="Delete" />
+}
+
+<input type="button" class="btn btn-default" value="Back to student list" onclick="location.href='@Url.Action("Index", "Students")'" />
