@@ -1,0 +1,38 @@
+@{
+  Layout ="_Layout";
+}
+
+@using UniversityRegistrar.Models;
+@model List<UniversityRegistrar.Models.Student>;
+
+<h1 class="jumbotron"> Students Homepage </h1>
+
+  @if(@Model.Count == 0)
+  {
+    <h3> No students have been added yet!</h3>
+  }
+  
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Enrollment Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach(Student student in Model) 
+    {
+      <tr>
+      <td>@student.FirstName </td>
+      <td>@student.LastName</td>
+      <td>@student.DateEnrolled</td>
+      <td>@Html.ActionLink("Edit", "Edit", new { id = student.StudentId })  |  @Html.ActionLink("Details", "Details", new { id = student.StudentId})</td>
+      </tr>
+    }
+  </tbody>
+</table> 
+
+<button class="btn btn-default">@Html.ActionLink("Add a new student", "Create")</button>
+<button class="btn btn-default">@Html.ActionLink("Home", "Index", "Home")</button>
